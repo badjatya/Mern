@@ -55,6 +55,11 @@ router.post("/login", async (req, res) => {
       return res.status(422).json({ error: "Invalid user password" });
     }
 
+    const token = await user.generateAuthToken();
+    res.cookie("jwt", token, {
+      expires: new Date(Date.now() + 25892000000),
+    });
+
     res.json({ message: "User login successful" });
   } catch (error) {
     res.status(500).json({ error: "Server error" });
