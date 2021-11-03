@@ -3,6 +3,9 @@ const router = require("express").Router();
 // Model
 const User = require("../models/user");
 
+// Lib
+const bcrypt = require("bcryptjs");
+
 // User Registration
 router.post("/register", async (req, res) => {
   const { name, email, phone, work, password, confirmPassword } = req.body;
@@ -46,7 +49,13 @@ router.post("/login", async (req, res) => {
       return res.status(422).json({ error: "Invalid user" });
     }
 
-    res.json(user);
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(422).json({ error: "Invalid user password" });
+    }
+
+    res.json({ message: "User login successful" });
   } catch (error) {
     res.status(500).json({ error: "Server error" });
   }
