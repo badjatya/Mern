@@ -3,6 +3,7 @@ const router = require("express").Router();
 // Model
 const User = require("../models/user");
 
+// User Registration
 router.post("/register", async (req, res) => {
   const { name, email, phone, work, password, confirmPassword } = req.body;
 
@@ -12,6 +13,7 @@ router.post("/register", async (req, res) => {
   }
 
   try {
+    //checking is user exits
     const userExist = await User.findOne({ email });
 
     if (userExist) {
