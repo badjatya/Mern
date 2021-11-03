@@ -1,5 +1,8 @@
 import React from "react";
 
+// dom
+import { Switch, Route, Link } from "react-router-dom";
+
 // Importing components
 import Navbar from "./components/Navbar";
 
@@ -10,7 +13,9 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <Home />
+      <Switch>
+        <Route path="/" component={Home} exact />
+      </Switch>
     </>
   );
 };
