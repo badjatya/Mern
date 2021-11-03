@@ -35,4 +35,21 @@ router.post("/register", async (req, res) => {
   }
 });
 
+// Login
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(422).json({ error: "Invalid user" });
+    }
+
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 module.exports = router;
