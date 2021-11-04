@@ -3,9 +3,6 @@ import React from "react";
 // Import React dom
 import { Link } from "react-router-dom";
 
-// Importing bootstrap styles
-import "bootstrap/dist/css/bootstrap.css";
-
 const Navbar = () => {
   return (
     <>
