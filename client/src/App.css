@@ -1,27 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Jost", sans-serif;
+.icon {
+  font-size: 1.1rem;
 }
 
-body {
-  background: #f3f2ef;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 100vh;
-  width: 100vw;
-  font-family: "Jost", sans-serif;
+.icon-medium {
+  font-size: 1.25rem;
 }
 
-html {
-  font-size: 100%;
-  height: 100%;
-}
-
-html {
-  background: #eee;
+.icon-big {
+  font-size: 1.4rem;
 }
