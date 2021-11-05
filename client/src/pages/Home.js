@@ -1,10 +1,25 @@
 import React from "react";
 
+// Importing styles
+import {
+  Container,
+  LeftContainer,
+  RightContainer,
+  HomeContainer,
+  Message,
+  Heading,
+} from "./styles/home.styles";
+
 const Home = () => {
   return (
-    <div>
-      <p>Home</p>
-    </div>
+    <Container>
+      <LeftContainer />
+      <RightContainer />
+      <HomeContainer>
+        <Message>Hello</Message>
+        <Heading>I am mern stack developer</Heading>
+      </HomeContainer>
+    </Container>
   );
 };
 
