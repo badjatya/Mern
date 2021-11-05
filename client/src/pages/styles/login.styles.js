@@ -26,7 +26,7 @@ export const SignupContainer = styled.div`
   width: 60%;
 
   @media (max-width: 768px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin-top: 100px;
     margin-bottom: 100px;
   }
