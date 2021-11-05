@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -32,6 +33,7 @@ export const SignupContainer = styled.div`
 
   @media (max-width: 426px) {
     padding: 20px;
+    width: 70%;
   }
 `;
 
@@ -60,9 +62,26 @@ export const ImageContainer = styled.div`
     width: 80%;
     margin: 0 auto 30px auto;
   }
+
+  @media (max-width: 426px) {
+    width: 90%;
+  }
 `;
 
 export const Image = styled.img`
   width: 100%;
   height: 100%;
+`;
+
+export const NavLink = styled(Link)`
+  color: #000;
+  text-decoration: none;
+  margin-top: 7px;
+  display: block;
+  font-size: 0.9rem;
+
+  &:hover {
+    color: #000;
+    /* text-decoration: none; */
+  }
 `;

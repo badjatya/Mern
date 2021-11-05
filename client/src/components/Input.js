@@ -8,6 +8,7 @@ const Input = (props) => {
       <TextInput
         type={props.type}
         id={props.id}
+        {...props}
         placeholder={props.placeholder}
       />
     </InputContainer>

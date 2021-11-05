@@ -8,6 +8,7 @@ import {
   Heading,
   ImageContainer,
   Image,
+  NavLink,
 } from "./styles/Register.styles";
 
 // Importing Image
@@ -33,6 +34,7 @@ const Register = () => {
               type="text"
               id="name"
               placeholder="Your Name"
+              required
               icon={<FaUser className="icon" />}
             />
 
@@ -40,6 +42,7 @@ const Register = () => {
               type="email"
               id="email"
               placeholder="Your Email"
+              required
               icon={<MdMail className="icon-medium" />}
             />
 
@@ -47,6 +50,7 @@ const Register = () => {
               type="number"
               id="number"
               placeholder="Your Number"
+              required
               icon={<FaPhoneAlt className="icon" />}
             />
 
@@ -54,6 +58,7 @@ const Register = () => {
               type="text"
               id="profession"
               placeholder="Your Profession"
+              required
               icon={<FaGraduationCap className="icon-big" />}
             />
 
@@ -61,6 +66,7 @@ const Register = () => {
               type="password"
               id="password"
               placeholder="Password"
+              required
               icon={<AiFillLock className="icon-big" />}
             />
 
@@ -68,10 +74,13 @@ const Register = () => {
               type="password"
               id="confirmPassword"
               placeholder="Confirm your password"
+              required
               icon={<AiOutlineLock className="icon-big" />}
             />
 
             <CustomButton title="Signup" />
+
+            <NavLink to="/login">Already have a account? Login</NavLink>
           </form>
         </FormContainer>
         <ImageContainer>
