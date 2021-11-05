@@ -16,10 +16,20 @@ const ContactCard = (props) => {
 const Card = styled.div`
   background-color: #fff;
   padding: 10px 20px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 300px;
+
+  @media (max-width: 1024px) {
+    width: 230px;
+  }
+
+  @media (max-width: 426px) {
+    margin-bottom: 20px;
+    width: 80%;
+  }
 `;
 
 const Icon = styled.div`

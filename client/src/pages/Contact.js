@@ -2,10 +2,21 @@ import React from "react";
 import { MdOutlinePhoneAndroid, MdEmail, MdPlace } from "react-icons/md";
 
 // Styles
-import { Container, DetailsContainer } from "./styles/contact.styles";
+import {
+  Container,
+  DetailsContainer,
+  Form,
+  FormContainer,
+  InputContainers,
+  InputContainer,
+  Input,
+  Heading,
+  TextArea,
+} from "./styles/contact.styles";
 
 // Importing Components
 import ContactCard from "../components/ContactCard";
+import CustomButton from "../components/CustomButton";
 
 const Contact = () => {
   return (
@@ -27,6 +38,29 @@ const Contact = () => {
           icon={<MdPlace className="icon-medium" />}
         />
       </DetailsContainer>
+
+      <FormContainer>
+        <Form>
+          <Heading>Get in Touch</Heading>
+          <InputContainers>
+            <InputContainer>
+              <Input type="text" placeholder="Your name" />
+            </InputContainer>
+
+            <InputContainer>
+              <Input type="email" placeholder="Your email" />
+            </InputContainer>
+
+            <InputContainer>
+              <Input type="number" placeholder="Your number" />
+            </InputContainer>
+          </InputContainers>
+
+          <TextArea placeholder="Message" />
+
+          <CustomButton title="Submit" />
+        </Form>
+      </FormContainer>
     </Container>
   );
 };
