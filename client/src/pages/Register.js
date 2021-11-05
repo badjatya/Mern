@@ -20,6 +20,7 @@ import { AiFillLock, AiOutlineLock } from "react-icons/ai";
 
 // Importing Components
 import Input from "../components/Input";
+import CustomButton from "../components/CustomButton";
 
 const Register = () => {
   return (
@@ -69,6 +70,8 @@ const Register = () => {
               placeholder="Confirm your password"
               icon={<AiOutlineLock className="icon-big" />}
             />
+
+            <CustomButton title="Signup" />
           </form>
         </FormContainer>
         <ImageContainer>
