@@ -6,6 +6,9 @@ const User = require("../models/user");
 // Lib
 const bcrypt = require("bcryptjs");
 
+//middleware
+const auth = require("../middleware/auth");
+
 // User Registration
 router.post("/register", async (req, res) => {
   const { name, email, phone, work, password, confirmPassword } = req.body;
@@ -66,6 +69,12 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// about page
+router.get("/about", auth, async (req, res) => {
+  res.send("Hello from about page");
+});
+
+// admin
 router.get("/users", async (req, res) => {
   try {
     const users = await User.find({});
