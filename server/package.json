@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app",
-    "dev": "nodemon src/app"
+    "server": "nodemon src/app",
+    "client": "cd .. && cd client && yarn start",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
   },
   "keywords": [],
   "author": "",
@@ -18,6 +20,7 @@
     "mongoose": "^6.0.12"
   },
   "devDependencies": {
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "concurrently": "^6.3.0"
   }
 }
