@@ -66,7 +66,7 @@ const Register = () => {
       }),
     });
 
-    const data = await res.json();
+    const data = res.json();
     console.log(data);
 
     if (data.status === 422 || !data) {
