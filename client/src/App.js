@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Admin from "./pages/admin";
 
 import "./App.css";
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/contact" component={Contact} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/admin" component={Admin} />
       </Switch>
     </>
   );
