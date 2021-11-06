@@ -66,8 +66,7 @@ const Register = () => {
       }),
     });
 
-    const data = res.json();
-    console.log(data);
+    const data = await res.json();
 
     if (data.status === 422 || !data) {
       window.alert("Invalid Registration");
