@@ -29,7 +29,7 @@ const About = () => {
 
   useEffect(() => {
     callAbout();
-  }, []);
+  });
 
   return (
     <div style={{ marginTop: "100px" }}>
