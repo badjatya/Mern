@@ -4,7 +4,7 @@ const User = require("../models/user");
 const auth = async (req, res, next) => {
   try {
     const token = req.cookies.jwt;
-    const verifiedToken = jwt.verify(token, process.env.SECRET_KEY);
+    const verifiedToken = await jwt.verify(token, process.env.SECRET_KEY);
 
     const rootUser = await User.findOne({
       _id: verifiedToken._id,
@@ -14,6 +14,8 @@ const auth = async (req, res, next) => {
     if (!rootUser) {
       throw new Error("User not found");
     }
+
+    console.log(token);
 
     req.token = token;
     req.rootUser = rootUser;

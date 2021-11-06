@@ -61,6 +61,7 @@ router.post("/login", async (req, res) => {
     const token = await user.generateAuthToken();
     res.cookie("jwt", token, {
       expires: new Date(Date.now() + 25892000000),
+      httpOnly: false,
     });
 
     res.json({ message: "User login successful" });
@@ -71,7 +72,7 @@ router.post("/login", async (req, res) => {
 
 // about page
 router.get("/about", auth, async (req, res) => {
-  res.send("Hello from about page");
+  res.send(req.rootUser);
 });
 
 // admin
