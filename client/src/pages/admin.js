@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Admin = () => {
   const [users, setUsers] = useState([]);
@@ -9,10 +9,13 @@ const Admin = () => {
     setUsers(data);
   };
 
+  useEffect(() => {
+    handleClick();
+  });
+
   return (
     <div style={{ marginTop: "200px" }}>
       <h1>admin</h1>
-      <button onClick={handleClick}>click</button>
 
       {users.map((user) => (
         <p key={user._id}>{user.name}</p>
