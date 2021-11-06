@@ -49,7 +49,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { name, email, number, profession, password, confirmPassword } = user;
+    // const { name, email, number, profession, password, confirmPassword } = user;
 
     const res = await fetch("/register", {
       method: "POST",
@@ -57,27 +57,27 @@ const Register = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name,
-        email,
-        number,
-        profession,
-        password,
-        confirmPassword,
+        name: user.name,
+        email: user.email,
+        phone: user.number,
+        work: user.profession,
+        password: user.password,
+        confirmPassword: user.confirmPassword,
       }),
     });
 
     const data = await res.json();
     console.log(data);
 
-    // if (data.status === 422 || !data) {
-    //   window.alert("Invalid Registration");
-    //   console.log("Invalid Registration");
-    // } else {
-    //   window.alert(" Registration Successful");
-    //   console.log(" Registration Successful");
+    if (data.status === 422 || !data) {
+      window.alert("Invalid Registration");
+      console.log("Invalid Registration");
+    } else {
+      window.alert(" Registration Successful");
+      console.log(" Registration Successful");
 
-    //   history.push("/login");
-    // }
+      history.push("/login");
+    }
   };
 
   return (
